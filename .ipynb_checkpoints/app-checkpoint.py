@@ -305,14 +305,10 @@ if __name__ == "__main__":
 #叫出選單    
 
 # 傳送訊息到 line
-  def 
-    if input_text=='肚子好乾':
-    # 設定回覆訊息
-    
-    message = {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
+if input_text =='肚子很乾':
+    message = {"type": "template",
+               "altText": "this is a carousel template",
+               "template": {
     "type": "carousel",
     "actions": [],
     "columns": [
@@ -479,7 +475,3 @@ if __name__ == "__main__":
     ]
   }
 }
-
-    # 傳送訊息
-    line.reply_message(reply_token, message)
-  end
