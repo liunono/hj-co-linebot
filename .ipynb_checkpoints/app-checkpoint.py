@@ -303,8 +303,24 @@ if __name__ == "__main__":
     
     
 #叫出選單    
-if input_text == '肚子好乾':
-    message_array =[{
+
+def reply_to_line(reply_text)
+    # 取得 reply token
+    reply_token = params['events'][0]['replyToken']
+    
+    # 設定回覆訊息
+    message = {
+      type: 'text',
+      text: reply_text
+    } 
+
+    # 傳送訊息
+    line.reply_message(reply_token, message)
+
+
+
+if input_text == "肚子好乾"
+message =  {
   "type": "template",
   "altText": "this is a carousel template",
   "template": {
@@ -473,6 +489,6 @@ if input_text == '肚子好乾':
       }
     ]
   }
-}]
+}
         
 
