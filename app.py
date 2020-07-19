@@ -8,15 +8,6 @@
 
 整體功能描述
 
-應用伺服器主結構樣板
-    用來定義使用者傳送消息時，應該傳到哪些方法上
-        比如收到文字消息時，轉送到文字專屬處理方法
-
-消息專屬方法定義
-    當收到文字消息，從資料夾內提取消息，並進行回傳。
-    
-啟動應用伺服器    
-
 '''
 
 
@@ -47,9 +38,10 @@ import json
 
 # 載入基礎設定檔
 secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
+server_url=secretFileContentJson.get("server_url")
 
 # 設定Server啟用細節
-app = Flask(__name__,static_url_path = "/material" , static_folder = "./material/")
+app = Flask(__name__,static_url_path = "/素材" , static_folder = "./素材/")
 
 # 生成實體物件
 line_bot_api = LineBotApi(secretFileContentJson.get("channel_access_token"))
@@ -105,7 +97,7 @@ from linebot.models.template import *
 def detect_json_array_to_new_message_array(fileName):
     
     #開啟檔案，轉成json
-    with open(fileName,'r',encoding='utf8') as f:
+    with open(fileName,encoding='utf8') as f:
         jsonArray = json.load(f)
     
     # 解析json
@@ -164,7 +156,7 @@ def process_follow_event(event):
     
     # 讀取並轉換
     result_message_array =[]
-    replyJsonPath = "material/follow/reply.json"
+    replyJsonPath = "素材/關注/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
     # 消息發送
@@ -172,11 +164,6 @@ def process_follow_event(event):
         event.reply_token,
         result_message_array
     )
-
-    # 從follow資料夾內，取出圖文選單id，並告知line，綁定用戶
-    linkRichMenuId = open("material/follow/rich_menu_id", 'r').read()
-    line_bot_api.link_rich_menu_to_user(event.source.user_id, linkRichMenuId)
-    
 
 
 # In[ ]:
@@ -204,7 +191,7 @@ def process_text_message(event):
 
     # 讀取本地檔案，並轉譯成消息
     result_message_array =[]
-    replyJsonPath = "material/"+event.message.text+"/reply.json"
+    replyJsonPath = "素材/"+event.message.text+"/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
     # 發送
@@ -245,6 +232,8 @@ from urllib.parse import parse_qs
 @handler.add(PostbackEvent)
 def process_postback_event(event):
     
+
+
     query_string_dict = parse_qs(event.postback.data)
     
     print(query_string_dict)
@@ -252,7 +241,7 @@ def process_postback_event(event):
     
         result_message_array =[]
 
-        replyJsonPath = 'material/'+query_string_dict.get('folder')[0]+"/reply.json"
+        replyJsonPath = '素材/'+query_string_dict.get('folder')[0]+"/reply.json"
         result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
   
         line_bot_api.reply_message(
@@ -261,10 +250,10 @@ def process_postback_event(event):
         )
     elif 'menu' in query_string_dict:
  
-        linkRichMenuId = open("material/"+query_string_dict.get('menu')[0]+'/rich_menu_id', 'r').read()
+        linkRichMenuId = open("素材/"+query_string_dict.get('menu')[0]+'/rich_menu_id', 'r').read()
         line_bot_api.link_rich_menu_to_user(event.source.user_id,linkRichMenuId)
         
-        replyJsonPath = 'material/'+query_string_dict.get('menu')[0]+"/reply.json"
+        replyJsonPath = '素材/'+query_string_dict.get('menu')[0]+"/reply.json"
         result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
   
         line_bot_api.reply_message(
@@ -281,8 +270,8 @@ def process_postback_event(event):
 Application 運行（開發版）
 
 '''
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
 
 
 # In[ ]:
@@ -294,18 +283,7 @@ Application 運行（heroku版）
 
 '''
 
-import os
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=os.environ['PORT'])
-    
+# import os
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
-    
-    
-    
-#叫出選單    
-
-# 傳送訊息到 line
-if input_text =='肚子很乾':
-    message =
-    "type": "text",
-    "text": "Hello, world"
