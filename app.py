@@ -265,13 +265,13 @@ def process_postback_event(event):
 # In[ ]:
 
 
-'''
-
-Application 運行（開發版）
-
-'''
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+# '''
+#
+# Application 運行（開發版）
+#
+# '''
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0')
 
 
 # In[ ]:
@@ -283,7 +283,7 @@ Application 運行（heroku版）
 
 '''
 
-# import os
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0',port=os.environ['PORT'])
+import os
+if __name__ == "__main__":
+    app.run(host='0.0.0.0',port=os.environ['PORT'])
 
