@@ -10,9 +10,10 @@
         "text": "餐廳選單",
         "actions": [
           {
-            "type": "message",
-            "label": "合浦刀削麵",
-            "text": "合浦刀削麵"
+            "type": "image",
+            "originalContentUrl": "https://i.imgur.com/hSObQ3s.jpg",
+            "previewImageUrl": "https://i.imgur.com/hSObQ3s.jpg",
+            "animated": false
           },
           {
             "type": "message",
