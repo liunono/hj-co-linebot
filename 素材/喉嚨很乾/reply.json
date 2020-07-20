@@ -1,5 +1,5 @@
 [
-  {
+{
   "type": "template",
   "altText": "this is a carousel template",
   "template": {
@@ -115,9 +115,10 @@
             "text": "康青龍"
           },
           {
-            "type": "message",
+            "type": "postback",
             "label": "....",
-            "text": "...."
+            "text": "....",
+            "data": "menu=rich_menu_1"
           },
           {
             "type": "message",
