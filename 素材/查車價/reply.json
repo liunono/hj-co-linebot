@@ -1,0 +1,47 @@
+[
+{
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://i.imgur.com/JzJRbhV.png",
+        "text": "天書",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "天書",
+            "uri": "https://drive.google.com/file/d/1IJohtWH5ABJLUa8ft2jpMLS-VlAz1qo2/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://i.imgur.com/dYRCB2K.jpg",
+        "text": "權威",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "權威",
+            "uri": "https://drive.google.com/file/d/1CL01a9IQKsbFUZWwoSHhcQ7TqYC3M8FP/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://i.imgur.com/EcJOemG.jpg",
+        "text": "HOT",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "HOT",
+            "uri": "https://drive.google.com/file/d/1CL01a9IQKsbFUZWwoSHhcQ7TqYC3M8FP/view?usp=sharing"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+]

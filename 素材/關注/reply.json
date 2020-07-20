@@ -10,8 +10,25 @@
   "originalContentUrl": "https://i.imgur.com/MHhze0M.png",
   "previewImageUrl": "https://i.imgur.com/MHhze0M.png",
   "animated": false
-}
+},
 
+  {
+  "type": "template",
+  "altText": "this is a buttons template",
+  "template": {
+    "type": "buttons",
+    "actions": [
+      {
+        "type": "postback",
+        "label": "START",
+        "text": "START",
+        "data": "menu=rich_menu_1"
+      }
+    ],
+    "title": "啟動選單",
+    "text": "功能選項"
+  }
+}
 
 
 
