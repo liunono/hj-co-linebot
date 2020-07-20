@@ -75,9 +75,8 @@
         "height": 820
       },
       "action": {
-        "type": "postback",
-        "text": "範例語音",
-        "data": "menu=rich_menu_2"
+        "type": "uri",
+        "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
       }
     }
   ]

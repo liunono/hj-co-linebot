@@ -11,7 +11,7 @@ from linebot import LineBotApi
 '''
 rich_menu的本地列表
 '''
-rich_menu_array = ['rich_menu_2']
+rich_menu_array = ['rich_menu_1']
 
 
 # 載入安全設定檔
