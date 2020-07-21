@@ -1,6 +1,11 @@
 
 [
-
+{
+  "type": "image",
+  "originalContentUrl": "https://i.imgur.com/ix9wJPJ.jpg",
+  "previewImageUrl": "https://i.imgur.com/ix9wJPJ.jpg",
+  "animated": false
+},
 {
   "type": "image",
   "originalContentUrl": "https://i.imgur.com/PzfoIiQ.jpg",
