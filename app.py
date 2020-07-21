@@ -287,3 +287,58 @@ import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
+
+//機器人Token : 仙草奶綠
+string MyLineChannelAccessToken = "隱藏起來";
+/// <summary>
+/// Line機器人回覆API
+/// </summary>
+/// <returns></returns>
+[HttpPost]
+[Route("api/LineBotApi/post")]
+public async void Post()
+{
+    try
+    {
+        //取得 http Post RawData(should be JSON)
+        string postData = Request.Content.ReadAsStringAsync().Result;
+        //剖析JSON
+        var ReceivedMessage = isRock.LineBot.Utility.Parsing(postData);
+        var bot = new isRock.LineBot.Bot(this.MyLineChannelAccessToken);
+        //解析使用者傳給Bot的文字訊息
+        string userCommandString = ReceivedMessage.events[0].message.text;
+        //Service工作
+        LineBotMember _service = new LineBotMember();
+        //Return Message
+        string message = string.Empty;
+
+        //字串為save表示紀錄 ※實際應用應該偷偷記錄User ID ，這邊是範例
+        if (userCommandString == "save")
+        {
+            //測試方法: 紀錄
+            _service.InsertID(ReceivedMessage.events[0].source.userId);
+
+            //回覆API
+            var call = Task.Run(() =>
+            {
+                bot.ReplyMessage(ReceivedMessage.events[0].replyToken,
+                    string.Format("紀錄成功: {0}", ReceivedMessage.events[0].source.userId));
+            });
+        }
+     }
+      catch (Exception ex)
+      {
+                //取得 http Post RawData(should be JSON)
+                string postData = Request.Content.ReadAsStringAsync().Result;
+                //剖析JSON
+                var ReceivedMessage = isRock.LineBot.Utility.Parsing(postData);
+                var bot = new isRock.LineBot.Bot(this.MyLineChannelAccessToken);
+
+                //回覆API
+                var call = Task.Run(() =>
+                {
+                    bot.ReplyMessage(ReceivedMessage.events[0].replyToken,
+                        string.Format("錯誤資訊:{0}", ex.Message));
+                });
+       }
+}
