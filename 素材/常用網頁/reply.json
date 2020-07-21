@@ -52,7 +52,7 @@
           {
             "type": "uri",
             "label": "法源查詢",
-            "uri": "http://fyjud.lawbank.com.tw/list.aspx"
+            "uri": "http://fyjud.lawbank.com.tw/index.aspx"
           },
           {
             "type": "uri",
@@ -64,6 +64,11 @@
             "label": "....",
             "text": "...."
           }
+        ]
+      }
+    ]
+  }
+}
         ]
       }
     ]
