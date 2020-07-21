@@ -11,8 +11,7 @@
   "previewImageUrl": "https://i.imgur.com/MHhze0M.png",
   "animated": false
 },
-
-  {
+{
   "type": "template",
   "altText": "this is a carousel template",
   "template": {
@@ -54,12 +53,12 @@
       },
       {
         "thumbnailImageUrl": "https://webpageprod-ws.ntu.edu.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMjMvY2tmaWxlLzA4ZmM3MDNiLWYwM2UtNDMyOS05Y2UzLWZiYjliZjM4ZmVhZC5wbmc=&n=c3AtYmcucG5n",
-        "text": "常用網站",
+        "text": "常用網頁",
         "actions": [
           {
             "type": "message",
-            "label": "常用網站",
-            "text": "常用網站"
+            "label": "常用網頁",
+            "text": "常用網頁"
           }
         ]
       },
@@ -88,6 +87,5 @@
     ]
   }
 }
-
 
 ]

@@ -1,0 +1,75 @@
+[
+{
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "text": "常用網頁",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "監理站",
+            "uri": "https://mvdvan.mvdis.gov.tw/mvdvan/"
+          },
+          {
+            "type": "message",
+            "label": "動保查詢",
+            "text": "https://ppstrq.nat.gov.tw/pps/pubQuery/PropertyQuery/propertyQuery.do"
+          },
+          {
+            "type": "uri",
+            "label": "經濟部公司查詢",
+            "uri": "https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do"
+          }
+        ]
+      },
+      {
+        "text": "常用網頁",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "財務部公司查詢",
+            "uri": "https://www.etax.nat.gov.tw/etwmain/front/ETW113W1"
+          },
+          {
+            "type": "uri",
+            "label": "勞保異動",
+            "uri": "https://edesk.bli.gov.tw/na/"
+          },
+          {
+            "type": "message",
+            "label": "聯徵報告",
+            "text": "https://apply.jcic.org.tw/CreditQueryInput.do"
+          }
+        ]
+      },
+      {
+        "text": "常用網頁",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "法源查詢",
+            "uri": "http://fyjud.lawbank.com.tw/list.aspx"
+          },
+          {
+            "type": "message",
+            "label": "技術士證照查詢",
+            "text": "https://eservice.wdasec.gov.tw/www/CC95T"
+          },
+          {
+            "type": "message",
+            "label": "....",
+            "text": "...."
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+
+]

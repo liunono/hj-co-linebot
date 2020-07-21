@@ -11,8 +11,8 @@
         "actions": [
           {
             "type": "message",
-            "label": "菓點子 ",
-            "text": "菓點子 "
+            "label": "菓點子",
+            "text": "菓點子"
           },
           {
             "type": "message",
