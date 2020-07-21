@@ -156,7 +156,7 @@ def process_follow_event(event):
     
     # 讀取並轉換
     result_message_array =[]
-    replyJsonPath = "素材/關注/reply.json"
+    replyJsonPath = "素材/啟動呆呆婷/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
     # 消息發送

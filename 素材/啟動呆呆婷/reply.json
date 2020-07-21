@@ -1,0 +1,93 @@
+[
+
+{
+  "type": "text",
+  "text": "開啟功能密語:\n啟動呆呆婷\n\n"
+},
+
+  {
+  "type": "image",
+  "originalContentUrl": "https://i.imgur.com/MHhze0M.png",
+  "previewImageUrl": "https://i.imgur.com/MHhze0M.png",
+  "animated": false
+},
+
+  {
+  "type": "template",
+  "altText": "this is a carousel template",
+  "template": {
+    "type": "carousel",
+    "actions": [],
+    "columns": [
+      {
+        "thumbnailImageUrl": "https://i.imgur.com/suYxY8L.png",
+        "text": "查車價",
+        "actions": [
+          {
+            "type": "message",
+            "label": "查車價",
+            "text": "查車價"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://i2.kknews.cc/SIG=3kfi64t/ctp-vzntr/4339337rqpq84p758o678pp5231sr463.jpg",
+        "text": "肚子很乾",
+        "actions": [
+          {
+            "type": "message",
+            "label": "肚子很乾",
+            "text": "肚子很乾"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://2.bp.blogspot.com/-LYYnt3-n2X4/WxtqXCZ9eqI/AAAAAAAAy4g/Py3ofd3mf9MyXhAr_69NoPqNn-miKtX7wCKgBGAs/s1600/1-05.jpg",
+        "text": "喉嚨很乾",
+        "actions": [
+          {
+            "type": "message",
+            "label": "喉嚨很乾",
+            "text": "喉嚨很乾"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://webpageprod-ws.ntu.edu.tw/Download.ashx?u=LzAwMS9VcGxvYWQvMjMvY2tmaWxlLzA4ZmM3MDNiLWYwM2UtNDMyOS05Y2UzLWZiYjliZjM4ZmVhZC5wbmc=&n=c3AtYmcucG5n",
+        "text": "常用網站",
+        "actions": [
+          {
+            "type": "message",
+            "label": "常用網站",
+            "text": "常用網站"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://miro.medium.com/max/960/1*walxp14cMk2xDpbqbOE_3g.jpeg",
+        "text": "貸款試算表",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "貸款試算表",
+            "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
+          }
+        ]
+      },
+      {
+        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmBq6_dWAF6KcyVv-eaZx42jZ8ejrdZne7w&usqp=CAU",
+        "text": "食物統計",
+        "actions": [
+          {
+            "type": "uri",
+            "label": "食物統計",
+            "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+]
