@@ -15,9 +15,9 @@
             "uri": "https://mvdvan.mvdis.gov.tw/mvdvan/"
           },
           {
-            "type": "message",
+            "type": "uri",
             "label": "動保查詢",
-            "text": "https://ppstrq.nat.gov.tw/pps/pubQuery/PropertyQuery/propertyQuery.do"
+            "uri": "https://ppstrq.nat.gov.tw/pps/pubQuery/PropertyQuery/propertyQuery.do"
           },
           {
             "type": "uri",
@@ -40,9 +40,9 @@
             "uri": "https://edesk.bli.gov.tw/na/"
           },
           {
-            "type": "message",
+            "type": "uri",
             "label": "聯徵報告",
-            "text": "https://apply.jcic.org.tw/CreditQueryInput.do"
+            "uri": "https://apply.jcic.org.tw/CreditQueryInput.do"
           }
         ]
       },
@@ -55,9 +55,9 @@
             "uri": "http://fyjud.lawbank.com.tw/list.aspx"
           },
           {
-            "type": "message",
+            "type": "uri",
             "label": "技術士證照查詢",
-            "text": "https://eservice.wdasec.gov.tw/www/CC95T"
+            "uri": "https://eservice.wdasec.gov.tw/www/CC95T"
           },
           {
             "type": "message",
@@ -69,7 +69,6 @@
     ]
   }
 }
-
 
 
 ]
