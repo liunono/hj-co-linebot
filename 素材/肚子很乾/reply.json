@@ -51,8 +51,8 @@
         "actions": [
           {
             "type": "message",
-            "label": "阿芬的店",
-            "text": "阿芬的店"
+            "label": "阿芳的店",
+            "text": "阿芳的店"
           },
           {
             "type": "message",
