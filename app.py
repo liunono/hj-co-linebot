@@ -297,7 +297,7 @@ GOOGLESHEET
 
 def gettotal():
     apikey = 'AIzaSyAU73R4waHb2e0wLkqiWVWgqTGS5vcTrHY'
-    getvalueurl = 'https://sheets.googleapis.com/v4/spreadsheets/1pqOrWxA6rwB8U6RNMqPg4zpJuZt0CLRPkBkZ7cKpbSk/values/sheet1!A:C?key=%s' % (apikey)
+    getvalueurl = 'https://sheets.googleapis.com/v4/spreadsheets/1pqOrWxA6rwB8U6RNMqPg4zpJuZt0CLRPkBkZ7cKpbSk/values/sheet1!A:B?key=AIzaSyAU73R4waHb2e0wLkqiWVWgqTGS5vcTrHY
     res = requests.get(getvalueurl)
     data = res.content
 
