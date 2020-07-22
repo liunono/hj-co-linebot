@@ -287,3 +287,14 @@ import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("./GoogleSheetTeach-WP-2c572cd3d8d0.json", scope)
+client = gspread.authorize(creds)
+
+
+spreadSheet = client.open("基數表")#或是可以用 add_worksheet("11月", 100, 100) 來新增
+sheet = spreadSheet.worksheet("工作表1") # 利用 title 來抓 sheet
