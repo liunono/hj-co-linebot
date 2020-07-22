@@ -287,19 +287,3 @@ import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
-
-'''
-
-GOOGLESHEET
-
-'''
-
-
-def gettotal():
-    apikey = 'AIzaSyAU73R4waHb2e0wLkqiWVWgqTGS5vcTrHY'
-    getvalueurl = 'https://sheets.googleapis.com/v4/spreadsheets/1pqOrWxA6rwB8U6RNMqPg4zpJuZt0CLRPkBkZ7cKpbSk/values/sheet1!A:C?key=%s'%(apikey)
-    res = requests.get(getvalueurl)
-    data = res.content
-
-    jsondata = json.loads(data)
-    values = jsondata['values']
