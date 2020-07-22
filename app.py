@@ -95,8 +95,8 @@ from linebot.models.template import (
 from linebot.models.template import *
 
 def detect_json_array_to_new_message_array(fileName):
-
- #開啟檔案，轉成json
+    
+    #開啟檔案，轉成json
     with open(fileName,encoding='utf8') as f:
         jsonArray = json.load(f)
     
