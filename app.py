@@ -155,7 +155,7 @@ from linebot.models import (
 def process_follow_event(event):
     
     # 讀取並轉換
-    result_message_array =[]''''''
+    result_message_array =[]
     replyJsonPath = "素材/啟動呆呆婷/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
@@ -265,11 +265,11 @@ def process_postback_event(event):
 # In[ ]:
 
 
-# '''
-#
-# Application 運行（開發版）
-#
-# '''
+'''
+
+Application 運行（開發版）
+
+'''
 # if __name__ == "__main__":
 #     app.run(host='0.0.0.0')
 
@@ -286,3 +286,4 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
+
