@@ -4,9 +4,24 @@
   "text": "開啟功能密語:\n阿呆\n\n"
 },
   {
-  "type": "image",
-  "originalContentUrl": "https://i.imgur.com/MHhze0M.png",
-  "previewImageUrl": "https://i.imgur.com/MHhze0M.png",
-  "animated": false
+  "type": "imagemap",
+  "baseUrl": "https://i.imgur.com/lgnky6S.png",
+  "altText": "This is an imagemap",
+  "baseSize": {
+    "width": 460,
+    "height": 1000
+  },
+  "actions": [
+    {
+      "type": "message",
+      "area": {
+        "x": 0,
+        "y": 773,
+        "width": 1040,
+        "height": 557
+      },
+      "text": "阿呆"
+    }
+  ]
 }
 ]
