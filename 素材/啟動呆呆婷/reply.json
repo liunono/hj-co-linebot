@@ -11,6 +11,7 @@
 },
   {
   "type": "text",
-  "text": "阿呆"
+  "text": "阿呆",
+    "postback": "阿呆"
 }
 ]
