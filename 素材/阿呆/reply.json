@@ -1,5 +1,5 @@
 [
-{
+  {
   "type": "flex",
   "altText": "Flex Message",
   "contents": {
@@ -7,336 +7,271 @@
     "contents": [
       {
         "type": "bubble",
-        "body": {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "image",
-              "url": "https://i.imgur.com/suYxY8L.png",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top"
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "查車價",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "message",
-                        "label": "action",
-                        "text": "查車價"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
-            }
-          ],
-          "paddingAll": "0px"
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/w96OhMI.png",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
         },
-        "styles": {
-          "body": {
-            "separator": false
-          }
-        }
-      },
-      {
-        "type": "bubble",
         "body": {
           "type": "box",
           "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
           "contents": [
             {
-              "type": "image",
-              "url": "https://i.imgur.com/qpdrPDc.jpg",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top"
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "肚子很乾",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "message",
-                        "label": "action",
-                        "text": "肚子很乾"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
-            }
-          ],
-          "paddingAll": "0px"
-        },
-        "styles": {
-          "body": {
-            "separator": false
-          }
-        }
-      },
-      {
-        "type": "bubble",
-        "body": {
-          "type": "box",
-          "layout": "horizontal",
-          "contents": [
-            {
-              "type": "image",
-              "url": "https://i.imgur.com/iOsqmgo.jpg",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top",
+              "type": "text",
+              "text": "查車價",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
               "action": {
                 "type": "message",
-                "label": "action",
+                "label": "查車價",
+                "text": "查車價"
+              }
+            }
+          ]
+        },
+        "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
+          "body": {
+            "backgroundColor": "#000000"
+          }
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/qpdrPDc.jpg",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
+          "contents": [
+            {
+              "type": "text",
+              "text": "肚子很乾",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
+              "action": {
+                "type": "message",
+                "label": "肚子很乾",
+                "text": "肚子很乾"
+              }
+            }
+          ]
+        },
+        "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
+          "body": {
+            "backgroundColor": "#000000"
+          }
+        }
+      },
+      {
+        "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/iOsqmgo.jpg",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
+        },
+        "body": {
+          "type": "box",
+          "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
+          "contents": [
+            {
+              "type": "text",
+              "text": "喉嚨很乾",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
+              "action": {
+                "type": "message",
+                "label": "喉嚨很乾",
                 "text": "喉嚨很乾"
               }
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "喉嚨很乾",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "message",
-                        "label": "action",
-                        "text": "喉嚨很乾"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
             }
-          ],
-          "paddingAll": "0px"
+          ]
         },
         "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
           "body": {
-            "separator": false
+            "backgroundColor": "#000000"
           }
         }
       },
       {
         "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/P1TkC1s.png",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
+        },
         "body": {
           "type": "box",
           "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
           "contents": [
             {
-              "type": "image",
-              "url": "https://i.imgur.com/P1TkC1s.png",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top"
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "常用網頁",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "message",
-                        "label": "action",
-                        "text": "常用網頁"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
+              "type": "text",
+              "text": "常用網頁",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
+              "action": {
+                "type": "message",
+                "label": "常用網頁",
+                "text": "常用網頁"
+              }
             }
-          ],
-          "paddingAll": "0px"
+          ]
         },
         "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
           "body": {
-            "separator": false
+            "backgroundColor": "#000000"
           }
         }
       },
       {
         "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/BCwlubl.jpg",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
+        },
         "body": {
           "type": "box",
           "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
           "contents": [
             {
-              "type": "image",
-              "url": "https://i.imgur.com/BCwlubl.jpg",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top"
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "貸款試算",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "uri",
-                        "label": "action",
-                        "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing",
-                        "altUri": {
-                          "desktop": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
-                        }
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
+              "type": "text",
+              "text": "貸款試算",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
+              "action": {
+                "type": "uri",
+                "label": "貸款試算",
+                "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
+              }
             }
-          ],
-          "paddingAll": "0px"
+          ]
         },
         "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
           "body": {
-            "separator": false
+            "backgroundColor": "#000000"
           }
         }
       },
       {
         "type": "bubble",
+        "direction": "ltr",
+        "hero": {
+          "type": "image",
+          "url": "https://i.imgur.com/XmeFshq.jpg",
+          "align": "start",
+          "gravity": "top",
+          "size": "full",
+          "aspectRatio": "1.91:1",
+          "aspectMode": "cover"
+        },
         "body": {
           "type": "box",
           "layout": "horizontal",
+          "spacing": "none",
+          "margin": "none",
           "contents": [
             {
-              "type": "image",
-              "url": "https://i.imgur.com/XmeFshq.jpg",
-              "size": "full",
-              "aspectMode": "cover",
-              "aspectRatio": "2:3",
-              "gravity": "top"
-            },
-            {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "食物統計",
-                      "size": "4xl",
-                      "color": "#ff0000",
-                      "weight": "bold",
-                      "action": {
-                        "type": "uri",
-                        "label": "action",
-                        "altUri": {
-                          "desktop": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
-                        },
-                        "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "position": "absolute",
-              "offsetBottom": "0px",
-              "offsetStart": "0px",
-              "offsetEnd": "0px",
-              "backgroundColor": "#9C8E7Ecc",
-              "paddingAll": "20px",
-              "paddingTop": "18px"
+              "type": "text",
+              "text": "食物統計",
+              "flex": 0,
+              "size": "3xl",
+              "align": "center",
+              "weight": "bold",
+              "color": "#FF0000",
+              "action": {
+                "type": "uri",
+                "label": "食物統計",
+                "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
+              }
             }
-          ],
-          "paddingAll": "0px"
+          ]
         },
         "styles": {
+          "hero": {
+            "backgroundColor": "#000000",
+            "separator": true,
+            "separatorColor": "#FF0000"
+          },
           "body": {
-            "separator": false
+            "backgroundColor": "#000000"
           }
         }
       }
