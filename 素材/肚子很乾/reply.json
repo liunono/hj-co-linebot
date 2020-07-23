@@ -1,172 +1,351 @@
 [
-  {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
+ {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "吃的胖胖的",
+          "size": "xl",
+          "align": "center",
+          "color": "#0039FF"
+        }
+      ]
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "合浦牛肉麵",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
-            "label": "合浦刀削麵",
-            "text": "合浦刀削麵"
-          },
-          {
-            "type": "message",
-            "label": "溫州大餛飩",
-            "text": "溫州大餛飩"
-          },
-          {
-            "type": "message",
-            "label": "范媽媽麵食館",
-            "text": "范媽媽麵食館"
+            "label": "合浦牛肉麵",
+            "text": "合浦牛肉麵"
           }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
-            "type": "message",
-            "label": "番茄麵",
-            "text": "番茄麵"
-          },
-          {
-            "type": "message",
-            "label": "大華北麵食館",
-            "text": "大華北麵食館"
-          },
-          {
-            "type": "message",
-            "label": "彭湃涼麵",
-            "text": "彭湃涼麵"
-          }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
-            "type": "message",
-            "label": "阿芳的店",
-            "text": "阿芳的店"
-          },
-          {
-            "type": "message",
-            "label": "唐記米干",
-            "text": "唐記米干"
-          },
-          {
-            "type": "message",
-            "label": "南台灣土魠魚羹",
-            "text": "南台灣土魠魚羹"
-          }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
-            "type": "message",
-            "label": "粥神",
-            "text": "粥神"
-          },
-          {
-            "type": "message",
-            "label": "津鍋",
-            "text": "津鍋"
-          },
-          {
+        },
+        {
+          "type": "text",
+          "text": "八方雲集",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "八方雲集",
             "text": "八方雲集"
           }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
+        },
+        {
+          "type": "text",
+          "text": "溫州大餛飩",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "溫州大餛飩",
+            "text": "溫州大餛飩"
+          }
+        },
+        {
+          "type": "text",
+          "text": "范媽媽麵食館",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "范媽媽麵食館",
+            "text": "范媽媽麵食館"
+          }
+        },
+        {
+          "type": "text",
+          "text": "老王便當",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "老王便當",
             "text": "老王便當"
-          },
-          {
+          }
+        },
+        {
+          "type": "text",
+          "text": "鄉味番茄麵",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "鄉味番茄麵",
+            "text": "鄉味番茄麵"
+          }
+        },
+        {
+          "type": "text",
+          "text": "巧味雞腿大王",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "巧味雞腿大王",
             "text": "巧味雞腿大王"
-          },
-          {
+          }
+        },
+        {
+          "type": "text",
+          "text": "大華北麵食館",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "大華北麵食館",
+            "text": "大華北麵食館"
+          }
+        },
+        {
+          "type": "text",
+          "text": "彭湃涼麵",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "彭湃涼麵",
+            "text": "彭湃涼麵"
+          }
+        },
+        {
+          "type": "text",
+          "text": "阿芳的店",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "阿芳的店",
+            "text": "阿芳的店"
+          }
+        },
+        {
+          "type": "text",
+          "text": "正忠排骨飯",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "正忠排骨飯",
             "text": "正忠排骨飯"
           }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
-            "type": "message",
-            "label": "三郎便當",
-            "text": "三郎便當"
-          },
-          {
-            "type": "message",
-            "label": "紅油炒手",
-            "text": "紅油炒手"
-          },
-          {
+        },
+        {
+          "type": "text",
+          "text": "漢堡堡早午餐",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "漢堡堡早午餐",
             "text": "漢堡堡早午餐"
           }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
+        },
+        {
+          "type": "text",
+          "text": "唐記米干",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
-            "label": "幾霸分炸物",
-            "text": "幾霸分炸物"
-          },
-          {
+            "label": "唐記米干",
+            "text": "唐記米干"
+          }
+        },
+        {
+          "type": "text",
+          "text": "粥神",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
-            "label": "陳記鹹酥雞",
-            "text": "陳記鹹酥雞"
-          },
-          {
+            "label": "粥神",
+            "text": "粥神"
+          }
+        },
+        {
+          "type": "text",
+          "text": "南台灣土魠魚羹",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "南台灣土魠魚羹",
+            "text": "南台灣土魠魚羹"
+          }
+        },
+        {
+          "type": "text",
+          "text": "三郎便當",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "三郎便當",
+            "text": "三郎便當"
+          }
+        },
+        {
+          "type": "text",
+          "text": "津鍋",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "津鍋",
+            "text": "津鍋"
+          }
+        },
+        {
+          "type": "text",
+          "text": "紅油炒手",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "紅油炒手",
+            "text": "紅油炒手"
+          }
+        },
+        {
+          "type": "text",
+          "text": "派克雞排",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "派克雞排",
             "text": "派克雞排"
           }
-        ]
-      },
-      {
-        "text": "餐廳選單",
-        "actions": [
-          {
+        },
+        {
+          "type": "text",
+          "text": "陳記鹹酥雞",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "陳記鹹酥雞",
+            "text": "陳記鹹酥雞"
+          }
+        },
+        {
+          "type": "text",
+          "text": "幾霸分炸物",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "幾霸分炸物",
+            "text": "幾霸分炸物"
+          }
+        },
+        {
+          "type": "text",
+          "text": "程程圓形燒",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
             "type": "message",
             "label": "程程圓形燒",
             "text": "程程圓形燒"
-          },
-          {
-            "type": "message",
-            "label": ".....",
-            "text": "....."
-          },
-          {
-            "type": "message",
-            "label": ".....",
-            "text": "....."
           }
-        ]
-      }
-    ]
+        },
+        {
+          "type": "text",
+          "text": "頂呱呱",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "頂呱呱",
+            "text": "頂呱呱"
+          }
+        }
+      ]
+    }
   }
 }
 ]
