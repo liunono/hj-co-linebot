@@ -12,80 +12,344 @@
   "animated": false
 },
 {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/suYxY8L.png",
-        "text": "查車價",
-        "actions": [
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
           {
-            "type": "message",
-            "label": "查車價",
-            "text": "查車價"
+            "type": "image",
+            "url": "https://i.imgur.com/suYxY8L.png",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "查車價",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "message",
+                      "label": "action",
+                      "text": "查車價"
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
           }
-        ]
+        ],
+        "paddingAll": "0px"
       },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/qpdrPDc.jpg",
-        "text": "肚子很乾",
-        "actions": [
-          {
-            "type": "message",
-            "label": "肚子很乾",
-            "text": "肚子很乾"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/iOsqmgo.jpg",
-        "text": "喉嚨很乾",
-        "actions": [
-          {
-            "type": "message",
-            "label": "喉嚨很乾",
-            "text": "喉嚨很乾"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/P1TkC1s.png",
-        "text": "常用網頁",
-        "actions": [
-          {
-            "type": "message",
-            "label": "常用網頁",
-            "text": "常用網頁"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/BCwlubl.jpg",
-        "text": "貸款試算表",
-        "actions": [
-          {
-            "type": "uri",
-            "label": "貸款試算表",
-            "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/XmeFshq.jpg",
-        "text": "食物統計",
-        "actions": [
-          {
-            "type": "uri",
-            "label": "食物統計",
-            "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
-          }
-        ]
+      "styles": {
+        "body": {
+          "separator": false
+        }
       }
-    ]
-  }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/qpdrPDc.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "肚子很乾",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "message",
+                      "label": "action",
+                      "text": "肚子很乾"
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "styles": {
+        "body": {
+          "separator": false
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/iOsqmgo.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top",
+            "action": {
+              "type": "message",
+              "label": "action",
+              "text": "喉嚨很乾"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "喉嚨很乾",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "message",
+                      "label": "action",
+                      "text": "喉嚨很乾"
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "styles": {
+        "body": {
+          "separator": false
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/P1TkC1s.png",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "常用網頁",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "message",
+                      "label": "action",
+                      "text": "常用網頁"
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "styles": {
+        "body": {
+          "separator": false
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/BCwlubl.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "貸款試算",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing",
+                      "altUri": {
+                        "desktop": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "styles": {
+        "body": {
+          "separator": false
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/XmeFshq.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "食物統計",
+                    "size": "4xl",
+                    "color": "#ff0000",
+                    "weight": "bold",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "altUri": {
+                        "desktop": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
+                      },
+                      "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
+                    }
+                  }
+                ]
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "backgroundColor": "#9C8E7Ecc",
+            "paddingAll": "20px",
+            "paddingTop": "18px"
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "styles": {
+        "body": {
+          "separator": false
+        }
+      }
+    }
+  ]
 }
 
 ]
