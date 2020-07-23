@@ -286,21 +286,3 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
-
-
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
-scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name("./line-1595412442276-54b6ba5cddca.json", scope)
-client = gspread.authorize(creds)
-
-
-spreadSheet = client.open("基數表")#或是可以用 add_worksheet("11月", 100, 100) 來新增
-sheet = spreadSheet.worksheet("工作表1") # 利用 title 來抓 sheet
-
-header = ['利率期數','基數']
-header_row=sheet.rang("A1:B1")
-for index, cell in enumerate(header_now):
-    cell.value = header[index]
-    sheet.update_cells(header_row)
