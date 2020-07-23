@@ -10,8 +10,11 @@
   "animated": false
 },
   {
-  "type": "text",
-  "text": "阿呆",
-    "postback": "阿呆"
-}
+     "actions":
+     {
+       "type": "message",
+        "label": "阿呆",
+        "text": "阿呆"
+     }
+  }
 ]
