@@ -1,7 +1,8 @@
 [
 {
-  "type": "video",
-  "originalContentUrl": "https://i.imgur.com/jwdozp9.gif",
-  "previewImageUrl": "https://i.imgur.com/jwdozp9.gif"
+  "type": "image",
+  "originalContentUrl": "https://i.imgur.com/fYlvbSP.jpg",
+  "previewImageUrl": "https://i.imgur.com/fYlvbSP.jpg",
+  "animated": true
 }
 ]
