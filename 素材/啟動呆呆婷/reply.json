@@ -10,11 +10,24 @@
   "animated": false
 },
   {
-     "actions":
-     {
-       "type": "message",
-        "label": "阿呆",
-        "text": "阿呆"
-     }
-  }
+  "type": "imagemap",
+  "baseUrl": "https://i.imgur.com/lgnky6S.png",
+  "altText": "This is an imagemap",
+  "baseSize": {
+    "width": 1040,
+    "height": 2295
+  },
+  "actions": [
+    {
+      "type": "message",
+      "area": {
+        "x": 0,
+        "y": 773,
+        "width": 1040,
+        "height": 557
+      },
+      "text": "阿呆"
+    }
+  ]
+}
 ]
