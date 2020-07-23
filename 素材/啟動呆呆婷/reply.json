@@ -8,17 +8,17 @@
   "baseUrl": "https://i.imgur.com/B8vlvqz.png",
   "altText": "This is an imagemap",
   "baseSize": {
-    "width": 460,
-    "height": 1000
+    "width": 1040,
+    "height": 2367
   },
   "actions": [
     {
       "type": "message",
       "area": {
         "x": 0,
-        "y": 773,
+        "y": 648,
         "width": 1040,
-        "height": 557
+        "height": 832
       },
       "text": "阿呆"
     }
