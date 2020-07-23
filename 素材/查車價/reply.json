@@ -1,47 +1,90 @@
 [
 {
-  "type": "template",
-  "altText": "this is a carousel template",
-  "template": {
-    "type": "carousel",
-    "actions": [],
-    "columns": [
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/JzJRbhV.png",
-        "text": "天書",
-        "actions": [
-          {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "hero": {
+      "type": "image",
+      "url": "https://i.imgur.com/w96OhMI.png",
+      "align": "start",
+      "gravity": "top",
+      "size": "full",
+      "aspectRatio": "1.91:1",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "horizontal",
+      "spacing": "none",
+      "margin": "none",
+      "contents": [
+        {
+          "type": "text",
+          "text": "查車價",
+          "flex": 0,
+          "size": "xxl",
+          "align": "center",
+          "gravity": "top",
+          "weight": "bold",
+          "color": "#FF0000"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
             "type": "uri",
-            "label": "天書",
+            "label": "天  書",
             "uri": "https://drive.google.com/file/d/1IJohtWH5ABJLUa8ft2jpMLS-VlAz1qo2/view?usp=sharing"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/dYRCB2K.jpg",
-        "text": "權威",
-        "actions": [
-          {
+          },
+          "flex": 1,
+          "color": "#FF0000",
+          "margin": "none",
+          "height": "md",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "action": {
             "type": "uri",
-            "label": "權威",
+            "label": "權  威",
             "uri": "https://drive.google.com/file/d/1CL01a9IQKsbFUZWwoSHhcQ7TqYC3M8FP/view?usp=sharing"
-          }
-        ]
-      },
-      {
-        "thumbnailImageUrl": "https://i.imgur.com/EcJOemG.jpg",
-        "text": "HOT",
-        "actions": [
-          {
+          },
+          "flex": 1,
+          "color": "#4EC560",
+          "margin": "none",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "action": {
             "type": "uri",
             "label": "HOT",
             "uri": "https://drive.google.com/file/d/1CL01a9IQKsbFUZWwoSHhcQ7TqYC3M8FP/view?usp=sharing"
-          }
-        ]
+          },
+          "flex": 1,
+          "color": "#FFE442",
+          "style": "primary"
+        }
+      ]
+    },
+    "styles": {
+      "hero": {
+        "backgroundColor": "#000000",
+        "separator": true,
+        "separatorColor": "#FF0000"
+      },
+      "body": {
+        "backgroundColor": "#000000"
       }
-    ]
+    }
   }
 }
-
 
 ]
