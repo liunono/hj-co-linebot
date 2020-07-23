@@ -286,21 +286,3 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
-
-
-
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-from pprint import pprint
-
-Scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
-client = gspread.authorize(creds)
-sheet = client.open("base").sheet1
-
-data = sheet.get_all_records()
-row = sheet.row_values(3)
-col = sheet.col_values(3)
-cell = sheet.cell(1,2).value
-
-pprint(data)
