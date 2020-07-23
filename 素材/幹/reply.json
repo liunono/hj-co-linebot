@@ -1,12 +1,7 @@
 [
-  {
-  "type": "image",
+{
+  "type": "video",
   "originalContentUrl": "https://i.imgur.com/jwdozp9.gif",
-  "previewImageUrl": "https://i.imgur.com/jwdozp9.gif",
-  "animated": true
+  "previewImageUrl": "https://i.imgur.com/jwdozp9.gif"
 }
-
-
-
-
 ]
