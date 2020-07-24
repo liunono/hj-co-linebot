@@ -277,18 +277,6 @@ Application 運行（開發版）
 
 # In[ ]:
 
-
-
-
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
-Scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/spreadsheets','https://www.googleapis.com/auth/drive.file','https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
-client = gspread.authorize(creds)
-sheet = client.open("base").sheet1
-
-
 '''
 
 Application 運行（heroku版）
@@ -298,3 +286,12 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
+
+    import gspread
+    from oauth2client.service_account import ServiceAccountCredentials
+
+    Scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/spreadsheets',
+             'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive']
+    creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
+    client = gspread.authorize(creds)
+    sheet = client.open("base").sheet1
