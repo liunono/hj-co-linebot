@@ -262,6 +262,9 @@ def process_postback_event(event):
 
 # In[ ]:
 
+@app.route('/')
+def hello():
+    return 'Hello World!'
 
 '''
 
