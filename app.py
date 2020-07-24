@@ -289,9 +289,30 @@ if __name__ == "__main__":
 
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials
-
-    Scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/spreadsheets',
-             'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive']
+    import sys
+    import datetime
     creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
     client = gspread.authorize(creds)
-    sheet = client.open("base").sheet1
+    if event.message.text != "":
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text="紀錄成功"))
+        pass
+        # GDriveJSON就輸入下載下來Json檔名稱
+        # GSpreadSheet是google試算表名稱
+        GDriveJSON = 'creds.json'
+        GSpreadSheet = 'base'
+        while True:
+            try:
+                Scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/spreadsheets',
+                         'https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.com/auth/drive']
+                key = SAC.from_json_keyfile_name(GDriveJSON, scope)
+                gc = gspread.authorize(key)
+                worksheet = gc.open(GSpreadSheet).sheet1
+            except Exception as ex:
+                print('無法連線Google試算表', ex)
+                sys.exit(1)
+            textt = ""
+            textt += event.message.text
+            if textt != "":
+                worksheet.append_row((datetime.datetime.now(), textt))
+                print('新增一列資料到試算表', GSpreadSheet)
+                return textt
