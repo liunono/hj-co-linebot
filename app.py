@@ -66,6 +66,9 @@ def callback():
 
     return 'OK'
 
+    def hello():
+    return 'Hello World!'
+
 
 # In[ ]:
 
