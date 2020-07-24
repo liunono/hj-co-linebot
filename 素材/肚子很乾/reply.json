@@ -343,6 +343,20 @@
             "label": "頂呱呱",
             "text": "頂呱呱"
           }
+        },
+        {
+          "type": "text",
+          "text": "麥當勞",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "麥當勞",
+            "text": "麥當勞"
+          }
         }
       ]
     }
