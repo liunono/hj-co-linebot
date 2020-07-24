@@ -49,6 +49,7 @@ handler = WebhookHandler(secretFileContentJson.get("secret_key"))
 
 # 啟動server對外接口，使Line能丟消息進來
 @app.route("/", methods=['POST'])
+
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -261,11 +262,6 @@ def process_postback_event(event):
 
 
 # In[ ]:
-
-@app.route('/')
-def hello():
-    return 'Hello World!'
-
 '''
 
 Application 運行（開發版）
