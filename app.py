@@ -83,9 +83,7 @@ def callback():
 '''
 
 # 引用會用到的套件
-from linebot.models import (
-    ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage,VideoSendMessage
-)
+from linebot.models import (ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage,VideoSendMessage,AudioSendMessage)
 
 from linebot.models.template import (
     ButtonsTemplate,CarouselTemplate,ConfirmTemplate,ImageCarouselTemplate
