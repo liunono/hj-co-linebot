@@ -66,7 +66,8 @@ def callback():
 
     return 'OK'
 
-    def hello():
+@app.route('/')
+def hello():
     return 'Hello World!'
 
 
