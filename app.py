@@ -181,16 +181,24 @@ handler處理文字消息
 
 
 # 引用套件
-from linebot.models import (MessageEvent, TextMessage)
+
+#from linebot.models import (MessageEvent, TextMessage)
 
 # 文字消息處理
-# @handler.add(MessageEvent,message=TextMessage)
-# def process_text_message(event):
-#
-#     # 讀取本地檔案，並轉譯成消息
-#     result_message_array =[]
-#     replyJsonPath = "素材/"+event.message.text+"/reply.json"
-#     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
+
+@handler.add(MessageEvent,message=TextMessage)
+def process_text_message(event):
+
+    # 讀取本地檔案，並轉譯成消息
+    result_message_array =[]
+    replyJsonPath = "素材/"+event.message.text+"/reply.json"
+    result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
+
+    # 發送
+    line_bot_api.reply_message(
+        event.reply_token,
+        result_message_array,)
+
 
 # import gspread
 # from oauth2client.service_account import ServiceAccountCredentials
