@@ -2,7 +2,11 @@
 # coding: utf-8
 
 # In[ ]:
-
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+client = gspread.authorize(creds)
 
 '''
 
@@ -42,7 +46,6 @@ server_url=secretFileContentJson.get("server_url")
 
 # 設定Server啟用細節
 app = Flask(__name__,static_url_path = "/素材" , static_folder = "./素材/")
-
 # 生成實體物件
 line_bot_api = LineBotApi(secretFileContentJson.get("channel_access_token"))
 handler = WebhookHandler(secretFileContentJson.get("secret_key"))
@@ -206,6 +209,17 @@ def process_text_message(event):
     )
 
 
+@handler.add(MessageEvent,message=TextMessage)
+def handle_message(event):
+    sheet = client.open("base").sheet1
+    input_text = event.message.text
+    cell = sheet.find(input_text)
+    row = cell.row
+    cell.value=sheet.cell(row,2).value
+    data = cell.value
+    line_bot_api.reply_message(
+    event.reply_token,
+    TextSendMessage(text=data))
 # In[ ]:
 
 
