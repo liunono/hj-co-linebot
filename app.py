@@ -290,7 +290,7 @@ Application 運行（開發版）
 Application 運行（heroku版）
 
 '''
-import app('./xx.py')
+
 
 import os
 if __name__ == "__main__":
