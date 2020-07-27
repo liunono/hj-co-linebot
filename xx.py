@@ -3,11 +3,9 @@ from oauth2client.service_account import ServiceAccountCredentials
      scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
      creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
      client = gspread.authorize(creds)
-     sheet = client.open("base").sheet1
 
-
-@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    sheet = client.open("base").sheet1
     input_text = event.message.text
     cell = sheet.find(input_text)
     row = cell.row

@@ -36,6 +36,12 @@ from linebot.exceptions import (
 # 載入json處理套件
 import json
 
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+     creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+     client = gspread.authorize(creds)
+
 # 載入基礎設定檔
 secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
 server_url=secretFileContentJson.get("server_url")
@@ -209,6 +215,17 @@ def process_text_message(event):
         event.reply_token,
         result_message_array
     )
+
+def handle_message(event):
+    sheet = client.open("base").sheet1
+    input_text = event.message.text
+    cell = sheet.find(input_text)
+    row = cell.row
+    cell.value=sheet.cell(row,2).value
+    data = cell.value
+    line_bot_api.reply_message(
+    event.reply_token,
+    TextSendMessage(text=data))
 
  # In[ ]:
 
