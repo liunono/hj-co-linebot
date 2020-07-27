@@ -35,9 +35,6 @@ from linebot.exceptions import (
 
 # 載入json處理套件
 import json
-
-import app('./xx.py')
-
 # 載入基礎設定檔
 secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
 server_url=secretFileContentJson.get("server_url")
@@ -192,6 +189,11 @@ handler處理文字消息
 轉譯json後，將消息回傳給用戶
 
 '''
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+     creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+     client = gspread.authorize(creds)
 
 # 引用套件
 from linebot.models import (
@@ -202,16 +204,22 @@ from linebot.models import (
 @handler.add(MessageEvent,message=TextMessage)
 def process_text_message(event):
 
-    # # 讀取本地檔案，並轉譯成消息
-    # result_message_array =[]
-    # replyJsonPath = "素材/"+event.message.text+"/reply.json"
-    # result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-    #
-    # # 發送
-    # line_bot_api.reply_message(
-    #     event.reply_token,
-    #     result_message_array
-    # )
+    # 讀取本地檔案，並轉譯成消息
+    result_message_array =[]
+    replyJsonPath = "素材/"+event.message.text+"/reply.json"
+    result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
+def handle_message(event):
+    sheet = client.open("base").sheet1
+    input_text = event.message.text
+    cell = sheet.find(input_text)
+    row = cell.row
+    cell.value = sheet.cell(row, 2).value
+    data = cell.value
+
+    # 發送
+    line_bot_api.reply_message(
+        event.reply_token,
+        result_message_array,TextSendMessage(text=data)
 
  # In[ ]:
 
