@@ -132,18 +132,7 @@ def detect_json_array_to_new_message_array(fileName):
 
     # 回傳
     return returnArray
-
-
-
-
-
-
-
-
-
 # In[ ]:
-
-
 '''
 
 handler處理關注消息
@@ -192,9 +181,7 @@ handler處理文字消息
 
 
 # 引用套件
-from linebot.models import (
-    MessageEvent, TextMessage
-)
+from linebot.models import (MessageEvent, TextMessage)
 
 # 文字消息處理
 # @handler.add(MessageEvent,message=TextMessage)
@@ -205,23 +192,24 @@ from linebot.models import (
 #     replyJsonPath = "素材/"+event.message.text+"/reply.json"
 #     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
-     creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
-     client = gspread.authorize(creds)
-
-@handler.add(MessageEvent,message=TextMessage)
-def handle_message(event):
-    sheet = client.open("base").sheet1
-    input_text = event.message.text
-    cell = sheet.find(input_text)
-    row = cell.row
-    cell.value = sheet.cell(row, 2).value
-    data = cell.value
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=data))
+# import gspread
+# from oauth2client.service_account import ServiceAccountCredentials
+#     scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+#     creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+#     client = gspread.authorize(creds)
+#     sheet = client.open("base").sheet1
+#
+# @handler.add(MessageEvent,message=TextMessage)
+# def handle_message(event):
+#
+#     input_text = event.message.text
+#     cell = sheet.find(input_text)
+#     row = cell.row
+#     cell.value = sheet.cell(row, 2).value
+#     data = cell.value
+#     line_bot_api.reply_message(
+#     event.reply_token,
+#     TextSendMessage(text=data))
 
     # # 發送
     # line_bot_api.reply_message(
