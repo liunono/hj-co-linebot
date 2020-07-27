@@ -176,6 +176,7 @@ def process_follow_event(event):
         event.reply_token,
         result_message_array
     )
+    __import__("./xx.py")
 
 
 # In[ ]:
