@@ -286,3 +286,29 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
+
+    image_message = ImageSendMessage(
+        original_content_url='https://%s/images/preview1.png' % server_url,
+        preview_image_url='https://%s/images/preview1.png' % server_url
+    )
+    image_message2 = ImageSendMessage(
+        original_content_url='https://%s/images/preview.png' % server_url,
+        preview_image_url='https://%s/images/preview.png' % server_url
+    )
+    image_message3 = ImageSendMessage(
+        original_content_url='https://%s/images/preview3.png' % server_url,
+        preview_image_url='https://%s/images/preview3.png' % server_url
+    )
+
+    image_message4 = ImageSendMessage(
+        original_content_url='https://%s/images/preview4.png' % server_url,
+        preview_image_url='https://%s/images/preview4.png' % server_url
+    )
+
+    template_message_dict = {
+        "1": image_message,
+        "2": image_message2,
+        "3": image_message3,
+        "4": image_message4,
+        "5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
+    }
