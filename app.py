@@ -282,8 +282,6 @@ Application 運行（開發版）
 
 
 # In[ ]:
-import app(./xx.py)
-     app.TextSendMessage = "基數表"
 '''
 
 Application 運行（heroku版）
