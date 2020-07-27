@@ -312,3 +312,20 @@ if __name__ == "__main__":
         "4": image_message4,
         "5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
     }
+
+
+    @handler.add(MessageEvent, message=TextMessage)
+    def handle_message(event):
+
+        # 收到文字訊息之後把我們的文字轉交給google的AI服務
+
+        if (event.message.text.find('::text:') != -1):
+            line_bot_api.reply_message(
+                event.reply_token,
+                template_message_dict.get(event.message.text)
+            )
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="請點擊菜單上圖面，或輸入[::text:]more，取得更多幫助")
+            )
