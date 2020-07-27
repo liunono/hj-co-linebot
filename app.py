@@ -36,7 +36,7 @@ from linebot.exceptions import (
 # 載入json處理套件
 import json
 
-
+import app('./xx.py')
 
 # 載入基礎設定檔
 secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
