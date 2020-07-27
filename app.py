@@ -36,6 +36,10 @@ from linebot.exceptions import (
 # 載入json處理套件
 import json
 
+from app.py import app
+
+
+
 # 載入基礎設定檔
 secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
 server_url=secretFileContentJson.get("server_url")
@@ -89,7 +93,7 @@ def hello():
 
 # 引用會用到的套件
 from linebot.models import (
-    ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage,VideoSendMessage
+    ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage,VideoSendMessage,audioSendMessaages
 )
 
 from linebot.models.template import (
