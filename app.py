@@ -135,6 +135,40 @@ def detect_json_array_to_new_message_array(fileName):
     return returnArray
 
 
+
+
+
+
+
+######創造字典
+
+ image_message = ImageSendMessage(
+        original_content_url='https://%s/images/preview1.png' % server_url,
+        preview_image_url='https://%s/images/preview1.png' % server_url
+    )
+    image_message2 = ImageSendMessage(
+        original_content_url='https://%s/images/preview.png' % server_url,
+        preview_image_url='https://%s/images/preview.png' % server_url
+    )
+    image_message3 = ImageSendMessage(
+        original_content_url='https://%s/images/preview3.png' % server_url,
+        preview_image_url='https://%s/images/preview3.png' % server_url
+    )
+
+    image_message4 = ImageSendMessage(
+        original_content_url='https://%s/images/preview4.png' % server_url,
+        preview_image_url='https://%s/images/preview4.png' % server_url
+    )
+
+    template_message_dict = {
+        "1": image_message,
+        "2": image_message2,
+        "3": image_message3,
+        "4": image_message4,
+        "5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
+    }
+
+
 # In[ ]:
 
 
@@ -203,6 +237,20 @@ def process_text_message(event):
         result_message_array
     )
 
+ def handle_message(event):
+
+        # 收到文字訊息之後把我們的文字轉交給google的AI服務
+
+        if (event.message.text.find('::text:') != -1):
+            line_bot_api.reply_message(
+                event.reply_token,
+                template_message_dict.get(event.message.text)
+            )
+        else:
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="請點擊菜單上圖面，或輸入[::text:]more，取得更多幫助")
+            )
 
 # In[ ]:
 
@@ -287,45 +335,7 @@ import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
-    image_message = ImageSendMessage(
-        original_content_url='https://%s/images/preview1.png' % server_url,
-        preview_image_url='https://%s/images/preview1.png' % server_url
-    )
-    image_message2 = ImageSendMessage(
-        original_content_url='https://%s/images/preview.png' % server_url,
-        preview_image_url='https://%s/images/preview.png' % server_url
-    )
-    image_message3 = ImageSendMessage(
-        original_content_url='https://%s/images/preview3.png' % server_url,
-        preview_image_url='https://%s/images/preview3.png' % server_url
-    )
-
-    image_message4 = ImageSendMessage(
-        original_content_url='https://%s/images/preview4.png' % server_url,
-        preview_image_url='https://%s/images/preview4.png' % server_url
-    )
-
-    template_message_dict = {
-        "1": image_message,
-        "2": image_message2,
-        "3": image_message3,
-        "4": image_message4,
-        "5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
-    }
 
 
-    @handler.add(MessageEvent, message=TextMessage)
-    def handle_message(event):
 
-        # 收到文字訊息之後把我們的文字轉交給google的AI服務
 
-        if (event.message.text.find('::text:') != -1):
-            line_bot_api.reply_message(
-                event.reply_token,
-                template_message_dict.get(event.message.text)
-            )
-        else:
-            line_bot_api.reply_message(
-                event.reply_token,
-                TextSendMessage(text="請點擊菜單上圖面，或輸入[::text:]more，取得更多幫助")
-            )
