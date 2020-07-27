@@ -161,11 +161,11 @@ def detect_json_array_to_new_message_array(fileName):
     )
 
     template_message_dict = {
-        "1": image_message,
-        "2": image_message2,
-        "3": image_message3,
-        "4": image_message4,
-        "5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
+        "[::text:]1": image_message,
+        "[::text:]2": image_message2,
+        "[::text:]3": image_message3,
+        "[::text:]4": image_message4,
+        "[::text:]5": [text_reply_message1, text_reply_message2, image_reply_message1, image_reply_message2]
     }
 
 
