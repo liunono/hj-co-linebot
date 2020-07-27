@@ -49,6 +49,7 @@ from oauth2client.service_account import ServiceAccountCredentials
      creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
      client = gspread.authorize(creds)
 
+@handler.add(MessageEvent,message=TextMessage)
 def handle_message(event):
     sheet = client.open("base").sheet1
     input_text = event.message.text
