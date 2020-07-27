@@ -2,11 +2,7 @@
 # coding: utf-8
 
 # In[ ]:
-# import gspread
-# from oauth2client.service_account import ServiceAccountCredentials
-# scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
-# creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
-# client = gspread.authorize(creds)
+
 
 '''
 
@@ -305,4 +301,10 @@ Application 運行（heroku版）
 import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+client = gspread.authorize(creds)
 
