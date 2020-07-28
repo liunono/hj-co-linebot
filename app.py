@@ -1,18 +1,15 @@
+
 # coding: utf-8
 
 # In[ ]:
 
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
-client = gspread.authorize(creds)
 
 '''
 
 整體功能描述
 
 '''
+
 
 # In[ ]:
 
@@ -40,15 +37,15 @@ from linebot.exceptions import (
 import json
 
 # 載入基礎設定檔
-secretFileContentJson = json.load(open("./line_secret_key", 'r', encoding='utf8'))
-server_url = secretFileContentJson.get("server_url")
+secretFileContentJson=json.load(open("./line_secret_key",'r',encoding='utf8'))
+server_url=secretFileContentJson.get("server_url")
 
 # 設定Server啟用細節
-app = Flask(__name__, static_url_path="/素材", static_folder="./素材/")
+app = Flask(__name__,static_url_path = "/素材" , static_folder = "./素材/")
+
 # 生成實體物件
 line_bot_api = LineBotApi(secretFileContentJson.get("channel_access_token"))
 handler = WebhookHandler(secretFileContentJson.get("secret_key"))
-
 
 # 啟動server對外接口，使Line能丟消息進來
 @app.route("/", methods=['POST'])
@@ -67,8 +64,8 @@ def callback():
         abort(400)
 
     return 'OK'
-
-
+    
+    
 @app.route('/')
 def hello():
     return 'Hello World!'
@@ -92,30 +89,29 @@ def hello():
 
 # 引用會用到的套件
 from linebot.models import (
-    ImagemapSendMessage, TextSendMessage, ImageSendMessage, LocationSendMessage, FlexSendMessage, VideoSendMessage,
-    AudioSendMessage
+    ImagemapSendMessage,TextSendMessage,ImageSendMessage,LocationSendMessage,FlexSendMessage,VideoSendMessage
 )
 
 from linebot.models.template import (
-    ButtonsTemplate, CarouselTemplate, ConfirmTemplate, ImageCarouselTemplate
-
+    ButtonsTemplate,CarouselTemplate,ConfirmTemplate,ImageCarouselTemplate
+    
 )
 
 from linebot.models.template import *
 
-
 def detect_json_array_to_new_message_array(fileName):
-    # 開啟檔案，轉成json
-    with open(fileName, encoding='utf8') as f:
+    
+    #開啟檔案，轉成json
+    with open(fileName,encoding='utf8') as f:
         jsonArray = json.load(f)
-
+    
     # 解析json
     returnArray = []
     for jsonObject in jsonArray:
 
         # 讀取其用來判斷的元件
         message_type = jsonObject.get('type')
-
+        
         # 轉換
         if message_type == 'text':
             returnArray.append(TextSendMessage.new_from_json_dict(jsonObject))
@@ -126,17 +122,18 @@ def detect_json_array_to_new_message_array(fileName):
         elif message_type == 'image':
             returnArray.append(ImageSendMessage.new_from_json_dict(jsonObject))
         elif message_type == 'sticker':
-            returnArray.append(StickerSendMessage.new_from_json_dict(jsonObject))
+            returnArray.append(StickerSendMessage.new_from_json_dict(jsonObject))  
         elif message_type == 'audio':
-            returnArray.append(AudioSendMessage.new_from_json_dict(jsonObject))
+            returnArray.append(AudioSendMessage.new_from_json_dict(jsonObject))  
         elif message_type == 'location':
             returnArray.append(LocationSendMessage.new_from_json_dict(jsonObject))
         elif message_type == 'flex':
-            returnArray.append(FlexSendMessage.new_from_json_dict(jsonObject))
+            returnArray.append(FlexSendMessage.new_from_json_dict(jsonObject))  
         elif message_type == 'video':
-            returnArray.append(VideoSendMessage.new_from_json_dict(jsonObject))
+            returnArray.append(VideoSendMessage.new_from_json_dict(jsonObject))    
 
-            # 回傳
+
+    # 回傳
     return returnArray
 
 
@@ -158,12 +155,12 @@ from linebot.models import (
     FollowEvent
 )
 
-
 # 關注事件處理
 @handler.add(FollowEvent)
 def process_follow_event(event):
+    
     # 讀取並轉換
-    result_message_array = []
+    result_message_array =[]
     replyJsonPath = "素材/啟動呆呆婷/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
@@ -189,34 +186,24 @@ handler處理文字消息
 '''
 
 # 引用套件
+from linebot.models import (
+    MessageEvent, TextMessage
+)
 
+# 文字消息處理
+@handler.add(MessageEvent,message=TextMessage)
+def process_text_message(event):
 
-from linebot.models import (MessageEvent, TextMessage)
-import random
+    # 讀取本地檔案，並轉譯成消息
+    result_message_array =[]
+    replyJsonPath = "素材/"+event.message.text+"/reply.json"
+    result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
 
-
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    sheet = client.open("base").sheet1
-    input_text = event.message.text
-    cell = sheet.find(input_text)
-    row = cell.row
-    cell.value = sheet.cell(row, 2).value
-    data = cell.value
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
-    # try:
-
-    # except gspread.exceptions.CellNotFound:
-    #     result_array = process_text_message(event)
-    #     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
-
-
-# def process_text_message(event):
-#     replyJsonPath = "素材/" + event.message.text + "/reply.json"
-#     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-#     line_bot_api.reply_message(event.reply_token, result_message_array)
-
-# 發送
+    # 發送
+    line_bot_api.reply_message(
+        event.reply_token,
+        result_message_array
+    )
 
 
 # In[ ]:
@@ -245,33 +232,35 @@ from linebot.models import (
     PostbackEvent
 )
 
-from urllib.parse import parse_qs
-
+from urllib.parse import parse_qs 
 
 @handler.add(PostbackEvent)
 def process_postback_event(event):
-    query_string_dict = parse_qs(event.postback.data)
+    
 
+
+    query_string_dict = parse_qs(event.postback.data)
+    
     print(query_string_dict)
     if 'folder' in query_string_dict:
+    
+        result_message_array =[]
 
-        result_message_array = []
-
-        replyJsonPath = '素材/' + query_string_dict.get('folder')[0] + "/reply.json"
+        replyJsonPath = '素材/'+query_string_dict.get('folder')[0]+"/reply.json"
         result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-
+  
         line_bot_api.reply_message(
             event.reply_token,
             result_message_array
         )
     elif 'menu' in query_string_dict:
-
-        linkRichMenuId = open("素材/" + query_string_dict.get('menu')[0] + '/rich_menu_id', 'r').read()
-        line_bot_api.link_rich_menu_to_user(event.source.user_id, linkRichMenuId)
-
-        replyJsonPath = '素材/' + query_string_dict.get('menu')[0] + "/reply.json"
+ 
+        linkRichMenuId = open("素材/"+query_string_dict.get('menu')[0]+'/rich_menu_id', 'r').read()
+        line_bot_api.link_rich_menu_to_user(event.source.user_id,linkRichMenuId)
+        
+        replyJsonPath = '素材/'+query_string_dict.get('menu')[0]+"/reply.json"
         result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-
+  
         line_bot_api.reply_message(
             event.reply_token,
             result_message_array
@@ -300,7 +289,6 @@ Application 運行（heroku版）
 '''
 
 import os
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=os.environ['PORT'])
+    app.run(host='0.0.0.0',port=os.environ['PORT'])
 
