@@ -2,6 +2,8 @@
 # coding: utf-8
 
 # In[ ]:
+
+
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
