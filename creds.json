@@ -1,5 +1,3 @@
-[
-heroku config:add GOOGLE_SHEETS_CREDS_JSON='
 {
   "type": "service_account",
   "project_id": "linebot-284103",
@@ -12,5 +10,3 @@ heroku config:add GOOGLE_SHEETS_CREDS_JSON='
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/linebot%40linebot-284103.iam.gserviceaccount.com"
 }
-'
-]
