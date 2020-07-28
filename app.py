@@ -4,35 +4,12 @@
 # In[ ]:
 
 
-# import gspread
-# from oauth2client.service_account import ServiceAccountCredentials
-# scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
-# creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
-# client = gspread.authorize(creds)
-
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+client = gspread.authorize(creds)
 
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-
-# 辞書オブジェクト。認証に必要な情報をHerokuの環境変数から呼び出している
-credential = {
-    "type": "service_account",
-    "project_id": os.environ["linebot-284103"]
-    "private_key_id": os.environ["67e6698c309950fc7b3c8862c083ae300b765fe4"]
-    "private_key": os.environ["-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrbv4eQHX6Bxl+\n8PfKWdzKJTKBpeK5NSW4Kow3kFiLvT5EPU15o83UlglmnoomKFn+Lgf3gne+oMaZ\nPiTtxSrOl5L7pl0IEW+Fovy6knsBnpvS9+fNMXNjygl/HIms/MdB9CMoAeSBRxm0\nTGgHK8xKwpuoS6aEd4AGRVEjQzrMnyDA0IRIKPi9IM5NIx+uBT4p2KUkOV3bKtgW\n8PVJYTJTIRYuFc2jg0xgokwAZMh1m7H/c25vM/g8MobQYnNwLgayxY2axu37HtcA\nwds8ROBtrK/9lF+Swj5dEr3DnMow1zqxwrCYcCDw+15wbhF30hZqyasGUitDKEgb\nkCFFZQpxAgMBAAECggEACFdv3j829l3k0dJODk6p0Xy2nMwacHZbcd8BIF2Bz3fb\neSTN+aScqfLMfY2qjXGCcn2hJdwXcUM/spptX9Prka6aqGvHhFJb3bHo7/ebbGBg\nNudY5Dk7IwCETobwFIaet/D2CnbwHFG+OJGMsMei6sLWId3fefvaEwQJrwhxCp6B\np4APq+nFwXjE78gtxU73NX1h26tsvPpA8xzRP/tNRhDG2BGAipWHefQjrsrvN/By\nm+RGRiZDRSBXnOAB9yaPR1P/R4xFWbRGNnNu/O/kEvBJuW71W8+pD8fn6cvT0rLy\n+sBfSnnEHkpvsQPhwynN3s9WcArhHxTb6Kfh++x3eQKBgQDbyqiodVZ1JAD56oVD\nyZHNQjeVcXGa44vn+wEpOnhkV5exFEJ7BO4aq1bdf3fNDGaq74fzrnOvfswNqEHK\nm8vLWcwkrWpOuOYqgD4q9yepLlkBDcQhblOijF4mczeaLp4xUlwzWRhbs8QykSdr\nFbFr2FXd5fv098idN9xUSsUPOQKBgQDHrOnwjsKa8JOMnJGh2gQIRk0NKlfmaxfL\nPd0AtRU9GXd62VBCIA6pYCY9z0x+RBhGFYnoMxNcAXU5tXMCMAfDUbocd7+2+R4E\nj2T6Btjq4CCAm6VuN8cd1PufWxfb8b5lXc6B6nQC2UiiLWbW8tNI2m0Jt2/MRNpD\nuDfEr4cc+QKBgHQlO8sJdo6gYAOw8otH0UxuWYEXWblH1X7ZHVv0Efq0buyckCUC\nDfD56gVSfrRUgUyDF4yl+2wZzSrKZznx6lejNEWNfkfrXXXIHxIFWWgFnfL4m1Qv\nQPL8yiP3bsKDMAVQSHi59C1BacRvAC2OYRtkTrvb9LEW32R1SHEisc/BAoGAPK6r\nJgVs1QOaA9itVZ/ZK96Zmg+tSQRw5b52RLnDq57qtbYHcyEk84qZ9JzkZVcyfVIc\naCnlj0eOJaykOBz6rvxOcEpgRC4vVjlx+Z5NHAxjNFKZEwb2h3VrxwE7Hge40juQ\n/+CNwzPfpBHiOB7x4SkojBRocI7YOk5o/GhPypkCgYEApXu6l7NW6WJLXd/ebH1U\n2JPuu5RzV036ZtJXeqQX8cmxsiykhr9GkZIDsXzn3LCvHc419UhJuRrNjfnU//pS\n5Cbt2sIV7vvTH+9gWtGw2z9+GHmeYEgySGB0KcHPyEH819PMtlpr1TaM3SDOOUsV\nbSNvhdEapiv5ug4Spa6VEUI=\n-----END PRIVATE KEY-----\n"]
-    "client_email": os.environ["linebot@linebot-284103.iam.gserviceaccount.com"]
-    "client_id": os.environ["103853022194133886262"]
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth"
-    "token_uri": "https://oauth2.googleapis.com/token"
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs"
-    "client_x509_cert_url":  os.environ['https://www.googleapis.com/robot/v1/metadata/x509/linebot%40linebot-284103.iam.gserviceaccount.com']
-}
-
-credentials = ServiceAccountCredentials.from_json_keyfile_dict(credential, scope)
-
-gc = gspread.authorize(credentials)
 
 '''
 
@@ -221,20 +198,20 @@ from linebot.models import (
 )
 
 # 文字消息處理
+# @handler.add(MessageEvent,message=TextMessage)
+# def handle_message(event):
+#     sheet = client.open("base").sheet1
+#     input_text = event.message.text
+#     try:
+#         cell = sheet.find(input_text)
+#         row = cell.row
+#         cell.value=sheet.cell(row,2).value
+#         data = cell.value
+#         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
+#     except gspread.exceptions.CellNotFound:
+#         result_array = process_text_message(event)
+#         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
 @handler.add(MessageEvent,message=TextMessage)
-def handle_message(event):
-    sheet = gc.open("base").sheet1
-    input_text = event.message.text
-    try:
-        cell = sheet.find(input_text)
-        row = cell.row
-        cell.value=sheet.cell(row,2).value
-        data = cell.value
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
-    except gspread.exceptions.CellNotFound:
-        result_array = process_text_message(event)
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
-
 def process_text_message(event):
     replyJsonPath = "素材/" + event.message.text + "/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
