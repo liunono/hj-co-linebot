@@ -3,6 +3,11 @@
 
 # In[ ]:
 
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("./creds.json", scope)
+client = gspread.authorize(creds)
 
 '''
 
@@ -185,37 +190,51 @@ handler處理文字消息
 '''
 
 # 引用套件
-from linebot.models import (
-    MessageEvent, TextMessage
-)
 
-# 文字消息處理
+
+from linebot.models import (MessageEvent, TextMessage)
+import random
+
 @handler.add(MessageEvent,message=TextMessage)
-def process_text_message(event):
+def handle_message(event):
+    sheet = client.open("base").sheet1
+    input_text = event.message.text
+    try:
+        cell = sheet.find(input_text)
+        row = cell.row
+        cell.value=sheet.cell(row,2).value
+        data = cell.value
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
+    except gspread.exceptions.CellNotFound:
+        result_array = process_text_message(event)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
 
-    # 讀取本地檔案，並轉譯成消息
-    result_message_array =[]
-    replyJsonPath = "素材/"+event.message.text+"/reply.json"
+def process_text_message(event):
+    replyJsonPath = "素材/" + event.message.text + "/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
+    line_bot_api.reply_message(event.reply_token,result_message_array)
+
+    # print('nodata')
+
+# @handler.add(MessageEvent, message=TextMessage)
+# def process_postback_event(event):
+#     result = random.choice(['50嵐', '85度C', '123'])
+    r
+
+
+        # line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
+# @handler.add(MessageEvent, message=TextMessage)
+# def process_postback_event(event):
+#     result_message_array =[]
+#     replyJsonPath = "素材/"+event.message.text+"/reply.json"
+#     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
+#     line_bot_api.reply_message(event.reply_token,result_message_array)
+
 
     # 發送
-    line_bot_api.reply_message(
-        event.reply_token,
-        result_message_array
-    )
 
 
-# @handler.add(MessageEvent,message=TextMessage)
-# def handle_message(event):
-#     sheet = client.open("base").sheet1
-#     input_text = event.message.text
-#     cell = sheet.find(input_text)
-#     row = cell.row
-#     cell.value=sheet.cell(row,2).value
-#     data = cell.value
-#     line_bot_api.reply_message(
-#     event.reply_token,
-#     TextSendMessage(text=data))
+
 # In[ ]:
 
 
@@ -258,7 +277,7 @@ def process_postback_event(event):
 
         replyJsonPath = '素材/'+query_string_dict.get('folder')[0]+"/reply.json"
         result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-  
+
         line_bot_api.reply_message(
             event.reply_token,
             result_message_array
@@ -285,8 +304,8 @@ def process_postback_event(event):
 Application 運行（開發版）
 
 '''
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
 
 
 # In[ ]:
@@ -298,13 +317,7 @@ Application 運行（heroku版）
 
 '''
 
-import os
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=os.environ['PORT'])
-
-# import gspread
-# from oauth2client.service_account import ServiceAccountCredentials
-# scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/drive']
-# creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
-# client = gspread.authorize(creds)
+# import os
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0',port=os.environ['PORT'])
 
