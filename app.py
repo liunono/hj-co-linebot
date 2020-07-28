@@ -192,18 +192,23 @@ from linebot.models import (
 
 # 文字消息處理
 @handler.add(MessageEvent,message=TextMessage)
+def handle_message(event):
+    sheet = client.open("base").sheet1
+    input_text = event.message.text
+    try:
+        cell = sheet.find(input_text)
+        row = cell.row
+        cell.value=sheet.cell(row,2).value
+        data = cell.value
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
+    except gspread.exceptions.CellNotFound:
+        result_array = process_text_message(event)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
+
 def process_text_message(event):
-
-    # 讀取本地檔案，並轉譯成消息
-    result_message_array =[]
-    replyJsonPath = "素材/"+event.message.text+"/reply.json"
+    replyJsonPath = "素材/" + event.message.text + "/reply.json"
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-
-    # 發送
-    line_bot_api.reply_message(
-        event.reply_token,
-        result_message_array
-    )
+    line_bot_api.reply_message(event.reply_token,result_message_array)
 
 
 # In[ ]:
