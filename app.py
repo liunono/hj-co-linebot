@@ -216,21 +216,6 @@ def process_text_message(event):
     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
     line_bot_api.reply_message(event.reply_token, result_message_array)
 
-    # print('nodata')
-
-
-# @handler.add(MessageEvent, message=TextMessage)
-# def process_postback_event(event):
-#     result = random.choice(['50嵐', '85度C', '123'])
-# line_bot_api.reply_message(event.reply_token, TextSendMessage(text=data))
-# @handler.add(MessageEvent, message=TextMessage)
-# def process_postback_event(event):
-#     result_message_array =[]
-#     replyJsonPath = "素材/"+event.message.text+"/reply.json"
-#     result_message_array = detect_json_array_to_new_message_array(replyJsonPath)
-#     line_bot_api.reply_message(event.reply_token,result_message_array)
-
-
 # 發送
 
 
