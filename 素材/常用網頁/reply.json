@@ -1,0 +1,141 @@
+[
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "查的順順的",
+          "size": "xl",
+          "align": "center",
+          "color": "#0039FF"
+        }
+      ]
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "監理站",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "監理站",
+            "uri": "https://mvdvan.mvdis.gov.tw/mvdvan/"
+          }
+        },
+        {
+          "type": "text",
+          "text": "動保查詢",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "動保查詢",
+            "uri": "https://ppstrq.nat.gov.tw/pps/pubQuery/PropertyQuery/propertyQuery.do"
+          }
+        },
+        {
+          "type": "text",
+          "text": "經濟部公司查詢",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "經濟部公司查詢",
+            "uri": "https://findbiz.nat.gov.tw/fts/query/QueryBar/queryInit.do"
+          }
+        },
+        {
+          "type": "text",
+          "text": "財務部公司查詢",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "財務部公司查詢",
+            "uri": "https://www.etax.nat.gov.tw/etwmain/front/ETW113W1"
+          }
+        },
+        {
+          "type": "text",
+          "text": "勞保異動",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "勞保異動",
+            "uri": "https://edesk.bli.gov.tw/na/"
+          }
+        },
+        {
+          "type": "text",
+          "text": "聯徵報告",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "聯徵報告",
+            "uri": "https://apply.jcic.org.tw/CreditQueryInput.do"
+          }
+        },
+        {
+          "type": "text",
+          "text": "法源查詢",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "uri",
+            "label": "法源查詢",
+            "uri": "http://fyjud.lawbank.com.tw/index.aspx"
+          }
+        },
+        {
+          "type": "text",
+          "text": "技術士證照查詢",
+          "flex": 0,
+          "size": "lg",
+          "align": "center",
+          "weight": "bold",
+          "color": "#FF7800",
+          "action": {
+            "type": "message",
+            "label": "技術士證照查詢",
+            "text": "https://eservice.wdasec.gov.tw/www/CC95T"
+          }
+        }
+      ]
+    }
+  }
+}
+]

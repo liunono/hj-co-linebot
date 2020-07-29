@@ -1,0 +1,83 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "圖文選單 1",
+  "chatBarText": "查看更多資訊",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 833,
+        "height": 814
+      },
+      "action": {
+        "type": "message",
+        "text": "查車價"
+      }
+    },
+    {
+      "bounds": {
+        "x": 853,
+        "y": 0,
+        "width": 833,
+        "height": 823
+      },
+      "action": {
+        "type": "message",
+        "text": "肚子很乾"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1705,
+        "y": 0,
+        "width": 795,
+        "height": 824
+      },
+      "action": {
+        "type": "message",
+        "text": "喉嚨很乾"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 846,
+        "width": 843,
+        "height": 834
+      },
+      "action": {
+        "type": "message",
+        "text": "常用網頁"
+      }
+    },
+    {
+      "bounds": {
+        "x": 862,
+        "y": 866,
+        "width": 824,
+        "height": 804
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://drive.google.com/file/d/1B7XP6CipHW5Q_f7RVt6rqttiGjpMlspk/view?usp=sharing"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1715,
+        "y": 866,
+        "width": 785,
+        "height": 820
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://docs.google.com/spreadsheets/d/1PplaHiwbBv98r6Cfoerc8Lu4RFxC2IRP6D-wDylC-M0/edit?usp=sharing"
+      }
+    }
+  ]
+}
